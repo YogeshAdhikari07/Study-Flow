@@ -7,6 +7,9 @@ server.use('/page',pageRoutes);
 server.get('/', (req, res) => {
     res.render('home.ejs');
 });
+server.get('/login',(req,res)=>{
+    res.send('Login')
+})
 server.listen(5000, () => {
     console.log('Server Started...');
 });
