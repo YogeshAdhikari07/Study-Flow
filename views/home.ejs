@@ -1,28 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Flow</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body class="h-screen w-screen bg-[#0b0b0c] text-white px-5 md:px-10">
+  </head>
+  <body class="h-screen w-screen bg-[#0b0b0c] text-white px-5 lg:px-10">
     <nav class="w-full flex flex-row justify-between py-5 items-center">
-        <span>
-            <h1 class="font-bold text-2xl">Study Flow</h1>
-        </span>
-        <span class="h-full flex flex-row gap-3 md:gap-10 items-center">
-            <a href="https://github.com/YogeshAdhikari07/Study-Flow" target="_blank" class="text-[#cfcfcfff]">Github</a>
-            <button class="bg-[#ff6b00] p-2 h-full rounded-xl">Get App</button>
-        </span>
+      <span>
+        <h1 class="font-bold text-2xl">Study Flow</h1>
+      </span>
+      <span class="h-full flex flex-row gap-3 lg:gap-10 items-center">
+        <a
+          href="https://github.com/YogeshAdhikari07/Study-Flow"
+          target="_blank"
+          class="text-[#cfcfcfff]"
+          >Github</a
+        >
+        <button class="bg-[#ff6b00] p-2 h-full rounded-xl flex justify-center items-center">Get Started</button>
+      </span>
     </nav>
-    <section id="hero" role="banner">
-        <div id="hero_banner_right">
-            <h1>
-                Student Task Manager — Organize your coursework with ease
-            </h1>
-        </div>
-        <div></div>
+    <section id="hero" role="banner" class="flex flex-row gap-10 h-full">
+      <div
+        id="hero_banner_right"
+        class="flex flex-col justify-center items-center lg:items-start flex-1 gap-8 h-full"
+      >
+        <h1 class="text-5xl font-bold mx-auto">
+          Organize your coursework with ease
+        </h1>
+        <p class="text-[#cfcfcfff]">
+          A lightweight task manager tailored for students: quickly add tasks,
+          mark them complete, edit or delete entries and filter by completed or
+          pending status. Built for speed, clarity and learning.
+        </p>
+        <span class="flex flex-col gap-6">
+          <span class="flex flex-row gap-6 items-center">
+            <img class="h-10" src="/media/component_2.svg" alt="icon" />
+            <span>
+              <h1>Add Tasks</h1>
+              <p>
+                Create assignments, due dates and priority notes in seconds.
+              </p>
+            </span>
+          </span>
+          <span class="flex flex-row gap-6 items-center">
+            <img class="h-10" src="/media/component_3.svg" alt="icon" />
+            <span>
+              <h1>Mark Tasks Completed</h1>
+              <p>Strike-through completed work and keep a tidy list.</p>
+            </span>
+          </span>
+          <span class="flex flex-row gap-6 items-center">
+            <img class="h-10" src="/media/component_4.svg" alt="icon" />
+            <span>
+              <h1>Edit/Delete</h1>
+              <p>Quickly update task details or remove obsolete items.</p>
+            </span>
+          </span>
+          <span class="flex flex-row gap-6 items-center">
+            <img class="h-10" src="/media/component_5.svg" alt="icon" />
+            <span>
+              <h1>Filter by completed / pending</h1>
+              <p>Focus on what matters with simple filters.</p>
+            </span>
+          </span>
+        </span>
+        <span class="flex flex-row gap-6"><button class="bg-[#fff] text-black p-2 rounded-xl justify-center items-center">Get Started</button><button class="bg-[#ff6b00] p-2 rounded-xl justify-center items-center">Source Code</button></span>
+      </div>
+      <div id="hero_banner_left" class="flex-1 h-full hidden lg:flex justify-center items-center"><img src="/media/image1.png" alt="Image" loading="lazy" class="w-130"></div>
     </section>
-</body>
+  </body>
 </html>
