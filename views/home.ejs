@@ -6,7 +6,7 @@
     <title>Study Flow</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="h-screen w-screen bg-[#0b0b0c] text-white px-5 lg:px-10">
+  <body class="h-screen w-screen bg-[#0b0b0c] text-white px-5 lg:px-10 flex flex-col gap-10 overflow-x-hidden">
     <nav class="w-full flex flex-row justify-between py-5 items-center">
       <span>
         <h1 class="font-bold text-2xl">Study Flow</h1>
@@ -21,15 +21,15 @@
         <button class="bg-[#ff6b00] p-2 h-full rounded-xl flex justify-center items-center">Get Started</button>
       </span>
     </nav>
-    <section id="hero" role="banner" class="flex flex-row gap-10 h-full">
+    <section id="hero" role="banner" class="flex flex-row py-5 gap-10 h-full w-full">
       <div
         id="hero_banner_right"
-        class="flex flex-col justify-center items-center lg:items-start flex-1 gap-8 h-full"
+        class="flex flex-col justify-center items-center  lg:items-start flex-1 gap-8 h-full"
       >
-        <h1 class="text-5xl font-bold mx-auto">
+        <h1 class="text-5xl font-bold mx-auto text-center">
           Organize your coursework with ease
         </h1>
-        <p class="text-[#cfcfcfff]">
+        <p class="text-[#cfcfcfff] text-center">
           A lightweight task manager tailored for students: quickly add tasks,
           mark them complete, edit or delete entries and filter by completed or
           pending status. Built for speed, clarity and learning.
@@ -68,7 +68,13 @@
         </span>
         <span class="flex flex-row gap-6"><button class="bg-[#fff] text-black p-2 rounded-xl justify-center items-center">Get Started</button><button class="bg-[#ff6b00] p-2 rounded-xl justify-center items-center">Source Code</button></span>
       </div>
-      <div id="hero_banner_left" class="flex-1 h-full hidden lg:flex justify-center items-center"><img src="/media/image1.png" alt="Image" loading="lazy" class="w-130"></div>
+      <div id="hero_banner_left" class="flex-1 h-full hidden lg:flex overflow-hidden"><img src="/media/image1.png" alt="Image" loading="lazy" class="object-cover"></div>
     </section>
+    <footer class="bg-[#2b2b2b]">
+      <span class="bg-black">
+        <img src="/media/linkedin.svg" alt="Linkedin">
+        <h1>Yogesh Adhikari</h1>
+      </span>
+    </footer>
   </body>
 </html>
