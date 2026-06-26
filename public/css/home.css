@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'StudyFlow'; 
+    src: url('/media/studyflow_1.ttf') format('truetype'); 
+}
+body
+{
+    font-family: StudyFlow;
+}
+::-webkit-scrollbar{
+    display: none;
+}
