@@ -10,7 +10,7 @@ function validation(displayname, email, password) {
     }
 }
 async function createuser(displayname, email, password) {
-    const res = await fetch('http://localhost:5000/api/signup', {
+    const res = await fetch('/api/signup', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
