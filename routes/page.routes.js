@@ -5,5 +5,11 @@ page.get('/leaderboard',(req,res)=>{
 });
 page.get('/logsign',(req,res)=>{
     res.render('logsign');
-})
+});
+page.get('/login',(req,res)=>{
+    res.render('login');
+});
+page.get('/signup',(req,res)=>{
+    res.render('signup');
+});
 module.exports = page;
