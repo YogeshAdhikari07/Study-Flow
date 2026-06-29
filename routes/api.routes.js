@@ -41,5 +41,42 @@ api.post('/signup', async (req, res) => {
         });
     }
 });
+api.post('/login', async (req, res) => {
+    const { displayname, password } = req.body;
+    try {
+        const user = await userModule.findOne({
+            displayname: displayname,
+        });
+        if (!user) {
+            res.status(401).json({
+                status: false,
+                message: 'Credential must be Incorrect!'
+            });
+        }
+        const isPassword = await bcrypt.compare(password, user.password);
+        if (!isPassword) {
+            res.status(401).json({
+                status: false,
+                message: 'Credential must be Incorrect!'
+            });
+        }
+        const token = jwt.sign(user,process.env.JWT_SECRET,{expiresIn:'1h'});
+        req.cookie('token',token,{
+            httpOnly: true,
+            secure: false
+        });
+        res.status(200).json({
+            status:true,
+            message:'User Founded!'
+        })
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            status: false,
+            message: 'Server Error!'
+        })
+    }
+})
 
 module.exports = api;
