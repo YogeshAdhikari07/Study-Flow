@@ -1,5 +1,6 @@
 const express = require('express');
 const page = express.Router();
+const auth = require('../middleware/auth');
 page.get('/leaderboard',(req,res)=>{
     res.render('leaderboard');
 });
@@ -11,5 +12,8 @@ page.get('/login',(req,res)=>{
 });
 page.get('/signup',(req,res)=>{
     res.render('signup');
+});
+page.get('/home',auth,(req,res)=>{
+    res.render('homePage');
 });
 module.exports = page;

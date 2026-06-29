@@ -1,7 +1,13 @@
 const express = require('express');
 const server = express();
+const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv');
+dotenv.config();
+const connector = require('./config/db');
+connector();
 const pageRoutes = require('./routes/page.routes');
 const apiRoutes = require('./routes/api.routes');
+server.use(cookieParser());
 server.set('view engine','ejs');
 server.use(express.static('public'));
 server.use(express.json());
@@ -14,6 +20,6 @@ server.get('/', (req, res) => {
 server.get('/login',(req,res)=>{
     res.send('Login')
 })
-server.listen(5000, () => {
+server.listen(process.env.PORT||5000, () => {
     console.log('Server Started...');
 });
