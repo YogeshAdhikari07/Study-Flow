@@ -28,14 +28,14 @@ api.post('/signup', async (req, res) => {
             httpOnly: true,
             secure: false
         });
-        res.status(201).json({
+        return res.status(201).json({
             status: true,
             message: "User Created"
         });
     } catch (err) {
         console.log(err);
 
-        res.status(500).json({
+        return res.status(500).json({
             status: false,
             message: "Not able to Create!"
         });
@@ -43,25 +43,29 @@ api.post('/signup', async (req, res) => {
 });
 api.post('/login', async (req, res) => {
     const { displayname, password } = req.body;
+    console.log(displayname,password);
     try {
         const user = await userModule.findOne({
             displayname: displayname,
         });
         if (!user) {
-            res.status(401).json({
+            return res.status(401).json({
                 status: false,
                 message: 'Credential must be Incorrect!'
             });
         }
         const isPassword = await bcrypt.compare(password, user.password);
         if (!isPassword) {
-            res.status(401).json({
+            return res.status(401).json({
                 status: false,
                 message: 'Credential must be Incorrect!'
             });
         }
-        const token = jwt.sign(user,process.env.JWT_SECRET,{expiresIn:'1h'});
-        req.cookie('token',token,{
+        const token = jwt.sign({
+            id:user._id,
+            displayname:user.displayname
+        },process.env.JWT_SECRET,{expiresIn:'1h'});
+        res.cookie("token", token, {
             httpOnly: true,
             secure: false
         });
@@ -77,6 +81,6 @@ api.post('/login', async (req, res) => {
             message: 'Server Error!'
         })
     }
-})
+});
 
 module.exports = api;

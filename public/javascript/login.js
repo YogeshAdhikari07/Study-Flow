@@ -1,42 +1,34 @@
-const form = document.getElementById('signupForm');
-const alertbox = document.getElementById('alertbox');
-function validation(displayname, email, password) {
-    const regExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (displayname.length <= 15 && password.length >= 8 && regExp.test(email)) {
-        return {status:true,
-            message:'No Error'
+const form = document.getElementById('loginForm');
+function validation(displayname, password) {
+    if (displayname.length <= 15 && password.length >= 8) {
+        return {
+            status: true,
+            message: 'No Error'
         };
     }
     else {
-        if(displayname.length <= 15){
+        if (displayname.length <= 15) {
             return {
-                status:false,
-                message:'DisplayName is Too Long!'
+                status: false,
+                message: 'DisplayName is Too Long!'
             }
         }
-        else if(password.length >= 8){
+        else if (password.length >= 8) {
             return {
-                status:false,
-                message:'Password is Too Short!'
-            }
-        }
-        else{
-            return {
-                status:false,
-                message:'Email is  Incorrect!'
+                status: false,
+                message: 'Password is Too Short!'
             }
         }
     }
 }
-async function createuser(displayname, email, password) {
-    const res = await fetch('/api/signup', {
+async function findUser(displayname, password) {
+    const res = await fetch('/api/login', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
             displayname: displayname,
-            email: email,
             password: password
         })
     });
@@ -48,7 +40,7 @@ async function createuser(displayname, email, password) {
         alertbox.innerText = `${data.message}`
         setInterval(() => {
             alertbox.classList.add('hidden');
-            location.href='/page/home'
+            location.href = '/page/home'
         }, 2500);
     } else {
         alertbox.classList.remove('hidden');
@@ -62,12 +54,11 @@ async function createuser(displayname, email, password) {
 }
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const displayname = document.getElementById('displayname').value.trim();
-    const email = document.getElementById('email').value.trim().replaceAll(' ', '');
+    const displayname = document.getElementById('displayname').value.trim().replaceAll(' ', '');
     const password = document.getElementById('password').value;
-    const result = validation(displayname, email, password);
+    const result = validation(displayname, password);
     if (result['status']) {
-        createuser(displayname, email, password);
+        findUser(displayname,password);
     }
     else {
         alertbox.classList.remove('hidden');
@@ -78,4 +69,4 @@ form.addEventListener('submit', (e) => {
             alertbox.classList.add('hidden');
         }, 1500);
     }
-});
+})

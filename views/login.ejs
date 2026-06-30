@@ -13,18 +13,17 @@
     <section id="hero" role="form" class="h-full w-full flex justify-center items-center flex-col">
         <div class="bg-[#2b2b2b] p-2 flex justify-center items-center flex-col rounded-xl">
             <h1 class="p-4 border-b-2 text-3xl font-bold text-center">STUDY FLOW</h1>
-            <form action="/api/login" method="post" id="loginForm" class="flex flex-col gap-4 p-2">
-                <label for="displayname">Display Name :</label>
+            <form id="loginForm" class="flex flex-col gap-4 p-2">
+                <label for="displayname">DISPLAY NAME :</label>
                 <input type="text" name="displayname" id="displayname" autocomplete="username" placeholder="DISPLAY NAME" required="required" class="p-2 flex justify-center outline-none border-1 border-[#ff6b00]">
-                <label for="email">email :</label>
-                <input type="email" name="email" id="email" autocomplete="email" placeholder="EMAIL" required="required" class="p-2 flex justify-center outline-none border-1 border-[#ff6b00]">
-                <label for="password">password</label>
-                <input type="password" name="password" id="password" autocomplete="current-password" placeholder="password" required="required" class="p-2 flex justify-center outline-none border-1 border-[#ff6b00]">
-                <button class="bg-white text-black p-4 flex justify-center items-center rounded-2xl hover:bg-[#ff6b00]" onclick="location.href='/page/Login'">login</button>
-                <span>Don't have an accout <a class="text-[#ff6b00]" href="/page/signup">Sign up</a></span>
+                <label for="password">PASSWORD :</label>
+                <input type="password" name="password" id="password" autocomplete="current-password" placeholder="PASSWORD" required="required" class="p-2 flex justify-center outline-none border-1 border-[#ff6b00]">
+                <button type="submit" class="bg-white text-black p-4 flex justify-center items-center rounded-2xl hover:bg-[#ff6b00]">LOGIN</button>
+                <span>DON'T HAVE AN ACCOUNT <a class="text-[#ff6b00]" href="/page/signup">SIGN UP</a></span>
             </form>
         </div>
     </section>
+    <span id="alertbox" role="alert" class="absolute top-10 left-[50%] -translate-x-1/2 flex flex-col gap-2 " ></span>
+    <script src="/javascript/login.js"></script>
 </body>
-
 </html>
