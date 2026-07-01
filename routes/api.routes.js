@@ -21,7 +21,7 @@ api.post('/signup', async (req, res) => {
             },
             process.env.JWT_SECRET,
             {
-                expiresIn: '1h'
+                expiresIn: '12h'
             }
         );
         res.cookie("token", token, {
@@ -43,7 +43,6 @@ api.post('/signup', async (req, res) => {
 });
 api.post('/login', async (req, res) => {
     const { displayname, password } = req.body;
-    console.log(displayname,password);
     try {
         const user = await userModule.findOne({
             displayname: displayname,
@@ -64,7 +63,7 @@ api.post('/login', async (req, res) => {
         const token = jwt.sign({
             id:user._id,
             displayname:user.displayname
-        },process.env.JWT_SECRET,{expiresIn:'1h'});
+        },process.env.JWT_SECRET,{expiresIn:'12h'});
         res.cookie("token", token, {
             httpOnly: true,
             secure: false

@@ -14,6 +14,6 @@ page.get('/signup',(req,res)=>{
     res.render('signup');
 });
 page.get('/home',auth,(req,res)=>{
-    res.render('homePage');
+    res.render('home');
 });
 module.exports = page;

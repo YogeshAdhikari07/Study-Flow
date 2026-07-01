@@ -15,7 +15,7 @@ server.use(express.urlencoded({extended:true}));
 server.use('/page',pageRoutes);
 server.use('/api',apiRoutes);
 server.get('/', (req, res) => {
-    res.render('home.ejs');
+    res.render('index');
 });
 server.get('/login',(req,res)=>{
     res.send('Login')
