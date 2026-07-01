@@ -1,0 +1,63 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<g fill="white">
+
+<!-- Outer dotted ring -->
+<circle cx="128" cy="38" r="4"/>
+<circle cx="153" cy="42" r="4"/>
+<circle cx="176" cy="54" r="4"/>
+<circle cx="196" cy="74" r="4"/>
+<circle cx="208" cy="98" r="4"/>
+<circle cx="218" cy="128" r="4"/>
+<circle cx="208" cy="158" r="4"/>
+<circle cx="196" cy="182" r="4"/>
+<circle cx="176" cy="202" r="4"/>
+<circle cx="153" cy="214" r="4"/>
+<circle cx="128" cy="218" r="4"/>
+<circle cx="103" cy="214" r="4"/>
+<circle cx="80" cy="202" r="4"/>
+<circle cx="60" cy="182" r="4"/>
+<circle cx="48" cy="158" r="4"/>
+<circle cx="38" cy="128" r="4"/>
+<circle cx="48" cy="98" r="4"/>
+<circle cx="60" cy="74" r="4"/>
+<circle cx="80" cy="54" r="4"/>
+<circle cx="103" cy="42" r="4"/>
+
+
+<!-- Inner dotted ring -->
+<circle cx="128" cy="72" r="3.5"/>
+<circle cx="148" cy="75" r="3.5"/>
+<circle cx="166" cy="88" r="3.5"/>
+<circle cx="181" cy="105" r="3.5"/>
+<circle cx="184" cy="128" r="3.5"/>
+<circle cx="181" cy="151" r="3.5"/>
+<circle cx="166" cy="168" r="3.5"/>
+<circle cx="148" cy="181" r="3.5"/>
+<circle cx="128" cy="184" r="3.5"/>
+<circle cx="108" cy="181" r="3.5"/>
+<circle cx="90" cy="168" r="3.5"/>
+<circle cx="75" cy="151" r="3.5"/>
+<circle cx="72" cy="128" r="3.5"/>
+<circle cx="75" cy="105" r="3.5"/>
+<circle cx="90" cy="88" r="3.5"/>
+<circle cx="108" cy="75" r="3.5"/>
+
+
+<!-- Search lens -->
+<circle cx="128" cy="128" r="42" stroke="white" stroke-width="5" opacity="0.9"/>
+
+<!-- Handle -->
+<line 
+x1="158" 
+y1="158" 
+x2="218" 
+y2="218"
+stroke="white"
+stroke-width="9"
+stroke-linecap="round"
+/>
+
+</g>
+
+</svg>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256"
+xmlns="http://www.w3.org/2000/svg">
+<path
+d="
+M128 48
+L140 48 L146 62
+L162 68 L176 62
+L194 80
+L188 94
+L194 110
+L208 116
+L208 140
+L194 146
+L188 162
+L194 176
+L176 194
+L162 188
+L146 194
+L140 208
+L116 208
+L110 194
+L94 188
+L80 194
+L62 176
+L68 162
+L62 146
+L48 140
+L48 116
+L62 110
+L68 94
+L62 80
+L80 62
+L94 68
+L110 62
+L116 48
+Z"
+fill="none"
+stroke="#fff"
+stroke-width="7"
+stroke-linejoin="round"/>
+
+
+<!-- moved inward dot layer -->
+<g fill="#fff">
+
+<!-- outer dots -->
+<circle cx="128" cy="68" r="5"/>
+<circle cx="188" cy="128" r="5"/>
+<circle cx="128" cy="188" r="5"/>
+<circle cx="68" cy="128" r="5"/>
+
+<circle cx="86" cy="86" r="5"/>
+<circle cx="170" cy="86" r="5"/>
+<circle cx="170" cy="170" r="5"/>
+<circle cx="86" cy="170" r="5"/>
+
+
+<!-- inner dots -->
+<circle cx="128" cy="86" r="4"/>
+<circle cx="170" cy="128" r="4"/>
+<circle cx="128" cy="170" r="4"/>
+<circle cx="86" cy="128" r="4"/>
+
+</g>
+
+
+<!-- center hub -->
+<circle cx="128" cy="128" r="32" fill="none"
+stroke="#fff"
+stroke-width="7"/>
+
+<circle cx="128" cy="128" r="8" fill="#fff"/>
+
+</svg>
