@@ -7,9 +7,10 @@
     <title>Study Flow</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="/css/index.css">
+    
 </head>
 
-<body class="h-screen w-screen overflow-x-hidden bg-[#0b0b0c] text-white flex flex-row p-6 gap-6">
+<body class="h-screen w-screen overflow-hidden bg-[#0b0b0c] text-white flex flex-row p-6 gap-6">
     <section id="menu" role="menu"
         class="border-2 border-[#575656] rounded-xl hidden lg:w-[250px] lg:flex p-4 gap-4 flex-col">
         <div class="flex flex-col flex-1 gap-2">
@@ -32,23 +33,64 @@
             </span>
         </div>
     </section>
-    <section id="hero" class="flex-1 flex flex-col ">
+    <section id="hero" class="flex-1 flex flex-col gap-4">
         <div class="flex flex-row justify-between">
-            <h1>Study Flow</h1>
+            <h1 class="lg:text-xl">Study Flow</h1>
             <span class="flex flex-row items-center gap-2">
                 <img src="/media/user.svg" alt="User" class="h-8">
                 <h1>User</h1>
             </span>
         </div>
-        <div class="flex-1 flex flex-row gap-2">
-            <section id="hero-main" class="flex-1">
-asa
+        <div class="flex-1 flex flex-row gap-4">
+            <section id="hero-main" class="flex-1 flex flex-col gap-4 h-[calc(100vh-90px)] overflow-y-auto">
+                <div id="greetings" class="flex gap-2">
+                    <h1 id="greeting-message">Good Morning</h1>
+                    <h1>user</h1>
+                </div>
+                <div id="tasks-preview" class="flex flex-col gap-2">
+                    <h1>My Tasks</h1>
+                    <div class="h-100 bg-[#242424] rounded-xl">
+
+                    </div>
+                </div>
+                <div id="study-heatmap" class="flex flex-col gap-2">
+                    <h1>Weekly Study Hours</h1>
+                    <div class="h-100 bg-[#242424] rounded-xl">
+
+                    </div>
+                </div>
             </section>
-            <section class="w-[250px]">
-asas
+            <section class="w-[250px] hidden lg:block">
+                <div>
+                    <h1 id="date-preview"></h1>
+                </div>
             </section>
         </div>
     </section>
+    <script>
+        function updateDateTime() {
+            const date = new Date();
+            document.getElementById('date-preview').textContent =
+                `${date.toLocaleDateString()} ${date.toLocaleTimeString('en-IN')}`;
+        }
+        function updateGreetingMessage() {
+            const date = new Date();
+            let message = '';
+            if (date.getHours() >= 5 && date.getHours() < 12) {
+                message = "Good Morning";
+            } else if (date.getHours() >= 12 && date.getHours() < 17) {
+                message = "Good Afternoon";
+            } else if (date.getHours() >= 17 && date.getHours() < 21) {
+                message = "Good Evening";
+            } else {
+                message = "Good Night";
+            }
+            document.getElementById('greeting-message').textContent = `${message},`
+        }
+        updateGreetingMessage();
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 
 </html>
