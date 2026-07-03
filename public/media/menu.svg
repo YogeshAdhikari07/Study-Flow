@@ -1,0 +1,33 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+<style>.dot{fill:#fff}</style>
+<circle class="dot" cx="20" cy="28" r="3"/>
+<circle class="dot" cx="30" cy="28" r="3"/>
+<circle class="dot" cx="40" cy="28" r="3"/>
+<circle class="dot" cx="50" cy="28" r="3"/>
+<circle class="dot" cx="60" cy="28" r="3"/>
+<circle class="dot" cx="70" cy="28" r="3"/>
+<circle class="dot" cx="80" cy="28" r="3"/>
+<circle class="dot" cx="90" cy="28" r="3"/>
+<circle class="dot" cx="100" cy="28" r="3"/>
+<circle class="dot" cx="110" cy="28" r="3"/>
+<circle class="dot" cx="20" cy="64" r="3"/>
+<circle class="dot" cx="30" cy="64" r="3"/>
+<circle class="dot" cx="40" cy="64" r="3"/>
+<circle class="dot" cx="50" cy="64" r="3"/>
+<circle class="dot" cx="60" cy="64" r="3"/>
+<circle class="dot" cx="70" cy="64" r="3"/>
+<circle class="dot" cx="80" cy="64" r="3"/>
+<circle class="dot" cx="90" cy="64" r="3"/>
+<circle class="dot" cx="100" cy="64" r="3"/>
+<circle class="dot" cx="110" cy="64" r="3"/>
+<circle class="dot" cx="20" cy="100" r="3"/>
+<circle class="dot" cx="30" cy="100" r="3"/>
+<circle class="dot" cx="40" cy="100" r="3"/>
+<circle class="dot" cx="50" cy="100" r="3"/>
+<circle class="dot" cx="60" cy="100" r="3"/>
+<circle class="dot" cx="70" cy="100" r="3"/>
+<circle class="dot" cx="80" cy="100" r="3"/>
+<circle class="dot" cx="90" cy="100" r="3"/>
+<circle class="dot" cx="100" cy="100" r="3"/>
+<circle class="dot" cx="110" cy="100" r="3"/>
+</svg>
