@@ -10,7 +10,7 @@ body
 {
     font-family: StudyFlow1;
 }
-form{
+form,input,textarea{
     font-family: StudyFlow2;
 }
 ::-webkit-scrollbar{
