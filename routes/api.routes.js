@@ -4,7 +4,9 @@ const userModule = require('../models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
-
+const auth = require('../middleware/auth');
+const taskModel = require('../models/task');
+const { default: mongoose } = require('mongoose');
 api.post('/signup', async (req, res) => {
     const { displayname, email, password } = req.body;
     try {
@@ -81,5 +83,30 @@ api.post('/login', async (req, res) => {
         })
     }
 });
-
+api.post('/createTask',auth,async(req,res)=>{
+    const {title,description,priority,effort} = req.body;
+    try{
+        const task = await taskModel.create({
+            userId:req.user.id,
+            title:title,
+            description:description,
+            priority:priority,
+            effort:effort
+        })
+        if(!task){
+            return res.status(500).json({
+                message:'Can not Create task',
+            });
+        }
+        return res.status(201).json({
+            message:'Task Created Successfully!',
+            id:task._id
+        });
+    }catch(err){
+        console.log(err);
+        return res.status(500).json({
+                message:'Can not Create task'
+            });
+    }
+});
 module.exports = api;

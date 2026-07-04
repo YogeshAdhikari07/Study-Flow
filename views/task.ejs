@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="/css/index.css">
 </head>
+
 <body class="h-screen w-screen overflow-hidden bg-[#0b0b0c] text-white flex flex-row p-6 gap-6">
     <section id="menu" role="menu"
         class="border-2 border-[#575656] rounded-xl hidden lg:w-[250px] lg:flex p-4 gap-4 flex-col">
         <div class="flex flex-col flex-1 gap-2">
-            <span class="flex flex-row gap-2" onclick="location.href='/page/home'"><img src="/media/dashboard.svg" alt="Dashboard" class="h-6">
+            <span class="flex flex-row gap-2" onclick="location.href='/page/home'"><img src="/media/dashboard.svg"
+                    alt="Dashboard" class="h-6">
                 <h1>DashBoard</h1>
             </span>
-            <span class="flex flex-row gap-2 hover:cursor-pointer" onclick="location.href='/page/task'"><img src="/media/notes.svg" alt="Tasks" class="h-6">
+            <span class="flex flex-row gap-2 hover:cursor-pointer" onclick="location.href='/page/task'"><img
+                    src="/media/notes.svg" alt="Tasks" class="h-6">
                 <h1>Tasks</h1>
             </span>
             <span class="flex flex-row gap-2"><img src="/media/stats.svg" alt="Stats" class="h-6">
@@ -32,8 +36,11 @@
     </section>
     <section id="hero" class="flex-1 flex flex-col gap-6">
         <div class="flex flex-row justify-between items-center ">
-            <span id="title" class="flex flex-row items-center gap-1"><img src="/media/menu.svg" alt="Menu" class="h-8 lg:hidden"><h1 class="text-xl">Tasks</h1></span>
-            <button type="button" class="bg-white text-black p-2 rounded-xl">Create Task</button>
+            <span id="title" class="flex flex-row items-center gap-1"><img src="/media/menu.svg" alt="Menu"
+                    class="h-8 lg:hidden">
+                <h1 class="text-xl">Tasks</h1>
+            </span>
+            <button type="button" class="bg-white text-black p-2 rounded-xl" id="btnCreateTask">Create Task</button>
         </div>
         <div class="flex flex-row justify-center">
             <span class="flex flex-row gap-2 items-center border-1 p-1 border-white rounded-full">
@@ -45,18 +52,26 @@
             <div class="flex justify-between py-4 px-6 rounded-xl">
                 <h1>Title</h1>
                 <h1>Priority</h1>
-                <h1>Effort</h1>
             </div>
         </div>
         <div id="task-preview" class="flex flex-col gap-4 h-auto overflow-y-auto">
+            <%tasks.forEach((task)=>{%>
+                <div id="<%=task['_id']%>" class="bg-[#242424] flex justify-between py-4 px-6 rounded-xl" onclick="location.href='/page/task/<%=task._id%>'">
+                    <h1><%=task['title']%></h1>
+                    <h1><%=task['priority']%></h1>
+                </div>
+            <%})%>
         </div>
     </section>
-    <form id="task-form" class="bg-[#575656] flex flex-col absolute -translate-y-1/2 top-[50%] left-[50%] -translate-x-1/2 p-4 rounded-xl gap-4">
+    <form id="taskForm"
+        class="bg-[#575656] flex flex-col absolute -translate-y-1/2 top-[50%] left-[50%] -translate-x-1/2 p-4 rounded-xl gap-4 hidden">
         <h1 class="">Create Task</h1>
         <label for="taskTitle">Title</label>
-        <input type="text" name="title" id="taskTitle" class="outline-none border-1 border-[#ff6b00] caret-green-[#ff6b00] p-2">
+        <input type="text" name="title" id="taskTitle"
+            class="outline-none border-1 border-[#ff6b00] caret-[#ff6b00] p-2">
         <label for="description">Description</label>
-        <textarea name="description" rows="5" cols="30" id="description" class="h-auto resize-none outline-none border-1 border-[#ff6b00] p-2"></textarea>
+        <textarea name="description" rows="5" cols="30" id="description"
+            class="h-auto resize-none outline-none border-1 caret-[#ff6b00] border-[#ff6b00] p-2"></textarea>
         <label for="priority">Task Priority</label>
         <select name="priority" id="priority" required="required" class="outline-none border-1 border-[#ff6b00] p-2">
             <option value="Low" selected>Low</option>
@@ -70,9 +85,11 @@
             <option value="High">High</option>
         </select>
         <span class="flex flex-row justify-center gap-10">
-            <button class="bg-white text-black p-2 rounded-xl" type="button">Create</button>
-            <button class="bg-white text-black p-2 rounded-xl" type="button">Cancel</button>
+            <button class="bg-white text-black p-2 rounded-xl" type="submit">Create</button>
+            <button class="bg-white text-black p-2 rounded-xl" type="button" id="cancelCreation">Cancel</button>
         </span>
     </form>
+    <script src="/javascript/task.js"></script>
 </body>
+
 </html>

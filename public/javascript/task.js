@@ -1,0 +1,44 @@
+const btnCreateTask = document.getElementById('btnCreateTask');
+const taskForm = document.getElementById('taskForm');
+const cancelCreationbtn = document.getElementById('cancelCreation');
+btnCreateTask.addEventListener('click', () => {
+    taskForm.classList.remove('hidden')
+})
+cancelCreationbtn.addEventListener('click', () => {
+    document.getElementById('taskTitle').value = '';
+    document.getElementById('description').value = '';
+    document.getElementById('priority').value = 'Low';
+    document.getElementById('effort').value = 'Low';
+    taskForm.classList.add('hidden');
+})
+taskForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const title = document.getElementById('taskTitle').value;
+    const description = document.getElementById('description').value;
+    const priority = document.getElementById('priority').value;
+    const effort = document.getElementById('effort').value;
+    if (title.length != 0 && title.length <= 15) {
+        if (description.length != 0 && description.length <= 50) {
+            const res = await fetch('/api/createTask', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: title,
+                    description: description,
+                    priority: priority,
+                    effort: effort
+                })
+            })
+            const data = await res.json();
+            if (res.status == 201) {
+                alert(data['message']);
+                document.getElementById('task-preview').innerHTML += `<div id="${data['id']}" class="bg-[#242424] flex justify-between py-4 px-6 rounded-xl" onclick="location.href='/page/task/${data['id']}'"><h1>${title}</h1><h1>${priority}</h1></div>`;
+            }
+        }
+        else {
+            alert('Description Cannot excced the Limit of 50 or Cannot not be Empty');
+        }
+    } else { alert('Title Cannot excced the Limit of 15 or cannot not be Empty'); }
+});
