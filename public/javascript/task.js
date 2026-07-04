@@ -1,4 +1,5 @@
 const btnCreateTask = document.getElementById('btnCreateTask');
+const menubtn = document.getElementById('menubtn');
 const taskForm = document.getElementById('taskForm');
 const cancelCreationbtn = document.getElementById('cancelCreation');
 btnCreateTask.addEventListener('click', () => {
@@ -11,13 +12,19 @@ cancelCreationbtn.addEventListener('click', () => {
     document.getElementById('effort').value = 'Low';
     taskForm.classList.add('hidden');
 })
+menubtn.addEventListener('click',()=>{
+    document.getElementById('menu').classList.add('flex');
+    document.getElementById('menu').classList.remove('hidden')
+    document.getElementById('menu').classList.add('flex-1');
+    document.getElementById('hero').classList.add('hidden');
+})
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const title = document.getElementById('taskTitle').value;
     const description = document.getElementById('description').value;
     const priority = document.getElementById('priority').value;
     const effort = document.getElementById('effort').value;
-    if (title.length != 0 && title.length <= 15) {
+    if (title.length != 0 && title.length <= 20) {
         if (description.length != 0 && description.length <= 250) {
             const res = await fetch('/api/createTask', {
                 method: 'POST',
@@ -39,11 +46,11 @@ taskForm.addEventListener('submit', async (e) => {
         }
         else
             {
-                alert('Description Cannot excced the Limit of 250 or Cannot not be Empty');
+                alert('Description Cannot excced the Limit of 250 or may be Empty');
             }
     }
     else
         { 
-            alert('Title Cannot excced the Limit of 15 or cannot not be Empty'); 
+            alert('Title Cannot excced the Limit of 20 or may be Empty'); 
         }
 });

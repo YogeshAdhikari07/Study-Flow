@@ -12,6 +12,7 @@
 <body class="h-screen w-screen overflow-hidden bg-[#0b0b0c] text-white flex flex-row p-6 gap-6">
     <section id="menu" role="menu"
         class="border-2 border-[#575656] rounded-xl hidden lg:w-[250px] lg:flex p-4 gap-4 flex-col">
+        <img src="/media/close.svg" alt="Close" class="h-10">
         <div class="flex flex-col flex-1 gap-2">
             <span class="flex flex-row gap-2" onclick="location.href='/page/home'"><img src="/media/dashboard.svg"
                     alt="Dashboard" class="h-6">
@@ -36,7 +37,7 @@
     </section>
     <section id="hero" class="flex-1 flex flex-col gap-6">
         <div class="flex flex-row justify-between items-center ">
-            <span id="title" class="flex flex-row items-center gap-1"><img src="/media/menu.svg" alt="Menu"
+            <span id="title" class="flex flex-row items-center gap-1"><img id="menubtn" src="/media/menu.svg" alt="Menu"
                     class="h-8 lg:hidden">
                 <h1 class="text-xl">Tasks</h1>
             </span>
