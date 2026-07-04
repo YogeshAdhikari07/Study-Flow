@@ -18,7 +18,7 @@ taskForm.addEventListener('submit', async (e) => {
     const priority = document.getElementById('priority').value;
     const effort = document.getElementById('effort').value;
     if (title.length != 0 && title.length <= 15) {
-        if (description.length != 0 && description.length <= 50) {
+        if (description.length != 0 && description.length <= 250) {
             const res = await fetch('/api/createTask', {
                 method: 'POST',
                 headers: {
@@ -37,8 +37,13 @@ taskForm.addEventListener('submit', async (e) => {
                 document.getElementById('task-preview').innerHTML += `<div id="${data['id']}" class="bg-[#242424] flex justify-between py-4 px-6 rounded-xl" onclick="location.href='/page/task/${data['id']}'"><h1>${title}</h1><h1>${priority}</h1></div>`;
             }
         }
-        else {
-            alert('Description Cannot excced the Limit of 50 or Cannot not be Empty');
+        else
+            {
+                alert('Description Cannot excced the Limit of 250 or Cannot not be Empty');
+            }
+    }
+    else
+        { 
+            alert('Title Cannot excced the Limit of 15 or cannot not be Empty'); 
         }
-    } else { alert('Title Cannot excced the Limit of 15 or cannot not be Empty'); }
 });
