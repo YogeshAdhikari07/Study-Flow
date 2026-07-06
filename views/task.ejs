@@ -43,7 +43,7 @@
                     class="h-8 lg:hidden">
                 <h1 class="text-xl">Tasks</h1>
             </span>
-            <button type="button" class="bg-white text-black p-2 rounded-xl" id="btnCreateTask">Create Task</button>
+            <button type="button" class="bg-white text-black p-2" id="btnCreateTask">Create Task</button>
         </div>
         <div class="flex flex-row justify-center">
             <span class="flex flex-row gap-2 items-center border-2 p-1 border-white rounded-2xl">
@@ -54,14 +54,14 @@
         <div class="">
             <div class="flex justify-between py-4 px-6 rounded-xl">
                 <h1>Title</h1>
-                <h1>Priority</h1>
+                <h1>Status</h1>
             </div>
         </div>
         <div id="task-preview" class="flex flex-col gap-4 h-auto overflow-y-auto">
             <%tasks.forEach((task)=>{%>
                 <div id="<%=task['_id']%>" class="bg-[#242424] flex justify-between py-4 px-6 rounded-xl" onclick="location.href='/page/task/<%=task._id%>'">
                     <h1><%=task['title']%></h1>
-                    <h1><%=task['priority']%></h1>
+                    <h1><%=task['status']%></h1>
                 </div>
             <%})%>
         </div>
@@ -88,8 +88,8 @@
             <option value="High">High</option>
         </select>
         <span class="flex flex-row justify-center gap-10">
-            <button class="bg-white text-black p-2 rounded-xl" type="submit">Create</button>
-            <button class="bg-white text-black p-2 rounded-xl" type="button" id="cancelCreation">Cancel</button>
+            <button class="bg-white text-black p-2 " type="submit">Create</button>
+            <button class="bg-white text-black p-2 " type="button" id="cancelCreation">Cancel</button>
         </span>
     </form>
     <script src="/javascript/task.js"></script>

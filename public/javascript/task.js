@@ -3,13 +3,17 @@ const menubtn = document.getElementById('menubtn');
 const taskForm = document.getElementById('taskForm');
 const cancelCreationbtn = document.getElementById('cancelCreation');
 const closeMenuBtn = document.getElementById('closemenu');
-closeMenuBtn.addEventListener('click',()=>{
+function resetForm() {
+    taskForm.reset();
+    taskForm.classList.add('hidden');
+}
+closeMenuBtn.addEventListener('click', () => {
     document.getElementById('menu').classList.remove('flex');
     document.getElementById('menu').classList.add('hidden')
     document.getElementById('menu').classList.remove('flex-1');
     document.getElementById('hero').classList.remove('hidden');
 })
-menubtn.addEventListener('click',()=>{
+menubtn.addEventListener('click', () => {
     document.getElementById('menu').classList.add('flex');
     document.getElementById('menu').classList.remove('hidden')
     document.getElementById('menu').classList.add('flex-1');
@@ -19,11 +23,7 @@ btnCreateTask.addEventListener('click', () => {
     taskForm.classList.remove('hidden')
 })
 cancelCreationbtn.addEventListener('click', () => {
-    document.getElementById('taskTitle').value = '';
-    document.getElementById('description').value = '';
-    document.getElementById('priority').value = 'Low';
-    document.getElementById('effort').value = 'Low';
-    taskForm.classList.add('hidden');
+    resetForm();
 })
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -47,17 +47,16 @@ taskForm.addEventListener('submit', async (e) => {
             })
             const data = await res.json();
             if (res.status == 201) {
+                resetForm();
                 alert(data['message']);
                 document.getElementById('task-preview').innerHTML += `<div id="${data['id']}" class="bg-[#242424] flex justify-between py-4 px-6 rounded-xl" onclick="location.href='/page/task/${data['id']}'"><h1>${title}</h1><h1>${priority}</h1></div>`;
             }
         }
-        else
-            {
-                alert('Description Cannot excced the Limit of 250 or may be Empty');
-            }
-    }
-    else
-        { 
-            alert('Title Cannot excced the Limit of 20 or may be Empty'); 
+        else {
+            alert('Description Cannot excced the Limit of 250 or may be Empty');
         }
+    }
+    else {
+        alert('Title Cannot excced the Limit of 20 or may be Empty');
+    }
 });

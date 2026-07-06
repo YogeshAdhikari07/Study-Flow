@@ -91,7 +91,8 @@ api.post('/createTask',auth,async(req,res)=>{
             title:title,
             description:description,
             priority:priority,
-            effort:effort
+            effort:effort,
+            status:'pending'
         })
         if(!task){
             return res.status(500).json({
