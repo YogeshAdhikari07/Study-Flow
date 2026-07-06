@@ -2,6 +2,19 @@ const btnCreateTask = document.getElementById('btnCreateTask');
 const menubtn = document.getElementById('menubtn');
 const taskForm = document.getElementById('taskForm');
 const cancelCreationbtn = document.getElementById('cancelCreation');
+const closeMenuBtn = document.getElementById('closemenu');
+closeMenuBtn.addEventListener('click',()=>{
+    document.getElementById('menu').classList.remove('flex');
+    document.getElementById('menu').classList.add('hidden')
+    document.getElementById('menu').classList.remove('flex-1');
+    document.getElementById('hero').classList.remove('hidden');
+})
+menubtn.addEventListener('click',()=>{
+    document.getElementById('menu').classList.add('flex');
+    document.getElementById('menu').classList.remove('hidden')
+    document.getElementById('menu').classList.add('flex-1');
+    document.getElementById('hero').classList.add('hidden');
+})
 btnCreateTask.addEventListener('click', () => {
     taskForm.classList.remove('hidden')
 })
@@ -11,12 +24,6 @@ cancelCreationbtn.addEventListener('click', () => {
     document.getElementById('priority').value = 'Low';
     document.getElementById('effort').value = 'Low';
     taskForm.classList.add('hidden');
-})
-menubtn.addEventListener('click',()=>{
-    document.getElementById('menu').classList.add('flex');
-    document.getElementById('menu').classList.remove('hidden')
-    document.getElementById('menu').classList.add('flex-1');
-    document.getElementById('hero').classList.add('hidden');
 })
 taskForm.addEventListener('submit', async (e) => {
     e.preventDefault();

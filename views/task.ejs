@@ -12,8 +12,10 @@
 <body class="h-screen w-screen overflow-hidden bg-[#0b0b0c] text-white flex flex-row p-6 gap-6">
     <section id="menu" role="menu"
         class="border-2 border-[#575656] rounded-xl hidden lg:w-[250px] lg:flex p-4 gap-4 flex-col">
-        <img src="/media/close.svg" alt="Close" class="h-10">
         <div class="flex flex-col flex-1 gap-2">
+            <span class="flex flex-row gap-2 justify-end">
+                <img src="/media/close.svg" alt="Close" class="h-10 lg:hidden" id="closemenu">
+            </span>
             <span class="flex flex-row gap-2" onclick="location.href='/page/home'"><img src="/media/dashboard.svg"
                     alt="Dashboard" class="h-6">
                 <h1>DashBoard</h1>

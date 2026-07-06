@@ -14,6 +14,9 @@
     <section id="menu" role="menu"
         class="border-2 border-[#575656] rounded-xl hidden lg:w-[250px] lg:flex p-4 gap-4 flex-col">
         <div class="flex flex-col flex-1 gap-2">
+            <span class="flex flex-row gap-2 justify-end">
+                <img src="/media/close.svg" alt="Close" class="h-10 lg:hidden" id="closemenu">
+            </span>
             <span class="flex flex-row gap-2" onclick="location.href='/page/home'"><img src="/media/dashboard.svg"
                     alt="Dashboard" class="h-6">
                 <h1>DashBoard</h1>
@@ -37,7 +40,10 @@
     </section>
     <section id="hero" class="flex-1 flex flex-col gap-4">
         <div class="flex flex-row justify-between">
-            <h1 class="lg:text-xl">Study Flow</h1>
+            <span class="flex flex-row items-center gap-2">
+                <img id="menubtn" src="/media/menu.svg" alt="Menu" class="h-8 lg:hidden">
+                <h1 class="lg:text-xl">Study Flow</h1>
+            </span>
             <span class="flex flex-row items-center gap-2">
                 <img src="/media/user.svg" alt="User" class="h-8">
                 <h1>
@@ -62,26 +68,28 @@
                 <div id="tasks-preview" class="flex flex-col gap-2">
                     <h1>My Tasks</h1>
                     <div class="flex p-4 flex-col gap-4">
-                        <%if(tasks.length != 0){%>
+                        <%if(tasks.length !=0){%>
                             <%tasks.forEach((task)=>{%>
-                            <div id="<%=task['_id']%>" class="bg-[#242424] flex justify-between py-4 px-6 rounded-xl"
-                                onclick="location.href='/page/task/<%=task._id%>'">
-                                <h1>
-                                    <%=task['title']%>
-                                </h1>
-                                <h1>
-                                    <%=task['priority']%>
-                                </h1>
-                            </div>
-                            <%})%>
-                            <div class=" flex items-center justify-center">
-                                <button type="button" onclick="location.href='/page/task'" class="p-2 bg-white text-black rounded-xl">See More</button>
-                            </div>
-                        <%}else{%>
-                            <div class="bg-[#575656] flex justify-between py-4 px-6 rounded-xl">
-                                No Tasks
-                            </div>
-                        <%}%>
+                                <div id="<%=task['_id']%>"
+                                    class="bg-[#242424] flex justify-between py-4 px-6 rounded-xl"
+                                    onclick="location.href='/page/task/<%=task._id%>'">
+                                    <h1>
+                                        <%=task['title']%>
+                                    </h1>
+                                    <h1>
+                                        <%=task['priority']%>
+                                    </h1>
+                                </div>
+                                <%})%>
+                                    <div class=" flex items-center justify-center">
+                                        <button type="button" onclick="location.href='/page/task'"
+                                            class="p-2 bg-white text-black rounded-xl">See More</button>
+                                    </div>
+                                    <%}else{%>
+                                        <div class="bg-[#575656] flex justify-between py-4 px-6 rounded-xl">
+                                            No Tasks
+                                        </div>
+                                        <%}%>
                     </div>
                 </div>
                 <div id="study-heatmap" class="flex flex-col gap-2">
