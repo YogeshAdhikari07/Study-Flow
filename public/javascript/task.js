@@ -49,7 +49,7 @@ taskForm.addEventListener('submit', async (e) => {
             if (res.status == 201) {
                 resetForm();
                 alert(data['message']);
-                document.getElementById('task-preview').innerHTML += `<div id="${data['id']}" class="bg-[#242424] flex justify-between py-4 px-6 rounded-xl" onclick="location.href='/page/task/${data['id']}'"><h1>${title}</h1><h1>${priority}</h1></div>`;
+                document.getElementById('task-preview').innerHTML += `<div id="${data['id']}" class="bg-[#242424] flex justify-between py-4 px-6 rounded-xl" onclick="location.href='/page/task/${data['id']}'"><h1>${title}</h1><h1>Pending</h1></div>`;
             }
         }
         else {
