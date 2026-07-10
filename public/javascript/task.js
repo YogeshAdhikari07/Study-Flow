@@ -3,6 +3,11 @@ const menubtn = document.getElementById('menubtn');
 const taskForm = document.getElementById('taskForm');
 const cancelCreationbtn = document.getElementById('cancelCreation');
 const closeMenuBtn = document.getElementById('closemenu');
+window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
 function resetForm() {
     taskForm.reset();
     taskForm.classList.add('hidden');

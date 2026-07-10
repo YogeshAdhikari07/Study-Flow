@@ -32,6 +32,11 @@ function updateGreetingMessage() {
     }
     document.getElementById('greeting-message').textContent = `${message},`
 }
+window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        window.location.reload();
+    }
+});
 updateGreetingMessage();
 updateDateTime();
 setInterval(updateDateTime, 1000);
