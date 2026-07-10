@@ -116,11 +116,34 @@ api.put('/task/status/:id', auth, async (req, res) => {
         const update = await taskModel.updateOne({
             _id: req.params.id
         }, { status: status });
-        return res.status(200).json({message:'Status updated!'})
+        return res.status(200).json({ message: 'Status updated!' })
 
-    }catch(err){
+    } catch (err) {
         console.log(err);
-        return res.status(500).json({message:'Not able to update!'})
+        return res.status(500).json({ message: 'Not able to update!' })
     }
-})
+});
+api.put('/task/editTask/:id', async (req, res) => {
+    try {
+        const { title, description, priority, effort } = req.body;
+        const updateTask = await taskModel.updateOne({ _id: req.params.id }, {
+            userId: req.user.id,
+            title: title,
+            description: description,
+            priority: priority,
+            effort: effort
+        });
+        if (!updateTask) {
+            return res.status(500).json({
+                message: "Server Error"
+            });
+        } else {
+            return res.status(201).json({
+                message: "Task Updated"
+            });
+        }
+    } catch (err) {
+        console.log(err);
+    }
+});
 module.exports = api;
