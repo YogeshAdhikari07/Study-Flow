@@ -8,7 +8,7 @@ filter.addEventListener('change', () => {
     const status = filter.value;
 
     if (status === "All") {
-        location.href = "/page/tasks";
+        location.href = "/page/task";
     } else {
         location.href = `/page/tasks/stats?status=${status}`;
     }
