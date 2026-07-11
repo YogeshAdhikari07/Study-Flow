@@ -128,18 +128,17 @@ node server.js
 
 | Method | Endpoint           | Description   |
 | ------ | ------------------ | ------------- |
-| POST   | /api/auth/register | Register User |
-| POST   | /api/auth/login    | Login User    |
+| POST   | /api/signup | Signup User |
+| POST   | /api/login    | Login User    |
 
 ### Task Routes
 
 | Method | Endpoint       | Description        |
 | ------ | -------------- | ------------------ |
-| GET    | /api/tasks     | Get All Tasks      |
-| POST   | /api/tasks     | Create Task        |
-| PUT    | /api/tasks/:id | Update Task        |
-| DELETE | /api/tasks/:id | Delete Task        |
-| PATCH  | /api/tasks/:id | Toggle Task Status |
+| POST   | /api/createTask     | Create Task        |
+| PUT    | /api/task/editTask/:id | Update Task        |
+| DELETE | /task/deleteTask/:id | Delete Task        |
+| PUT  | /api/task/status/:id | Toggle Task Status |
 
 ---
 
