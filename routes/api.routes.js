@@ -123,7 +123,7 @@ api.put('/task/status/:id', auth, async (req, res) => {
         return res.status(500).json({ message: 'Not able to update!' })
     }
 });
-api.put('/task/editTask/:id', async (req, res) => {
+api.put('/task/editTask/:id', auth, async (req, res) => {
     try {
         const { title, description, priority, effort } = req.body;
         const updateTask = await taskModel.updateOne({ _id: req.params.id }, {
@@ -143,6 +143,25 @@ api.put('/task/editTask/:id', async (req, res) => {
             });
         }
     } catch (err) {
+        console.log(err);
+    }
+});
+api.delete('/task/deleteTask/:id', auth, async (req, res) => {
+    try {
+        const deleteTask = await taskModel.deleteOne({
+            _id: req.params.id,
+            userId: req.user.id,
+        });
+        if(!deleteTask){
+            return res.status(500).json({
+                message:"Server Error"
+            });
+        }
+        return res.status(201).json({
+            message:"Deleted!"
+        })
+    }catch(err)
+    {
         console.log(err);
     }
 });
