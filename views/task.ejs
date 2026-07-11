@@ -46,10 +46,13 @@
             <button type="button" class="bg-white text-black p-2" id="btnCreateTask">Create Task</button>
         </div>
         <div class="flex flex-row justify-center">
-            <span class="flex flex-row gap-2 items-center border-2 p-1 border-white rounded-2xl">
-                <input type="text" id="search-Input" placeholder="Search" class="flex-1 outline-none px-4">
-                <img src="/media/search.svg" alt="Search" class="h-10">
-            </span>
+            <select name="filter" id="filter">
+                <option value="All" selected>All</option>
+                <option value="working">Working</option>
+                <option value="pending">Pending</option>
+                <option value="complete">Complete</option>
+                <option value="hold">Hold</option>
+            </select>
         </div>
         <div class="">
             <div class="flex justify-between py-4 px-6 rounded-xl">

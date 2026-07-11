@@ -36,5 +36,15 @@ page.get('/task/:id',async (req,res)=>{
         _id:req.params.id
     });
     return res.render('taskpreview',{taskData:taskData})
-})
+});
+page.get('/tasks/stats',auth,async (req, res) => {
+    const { status } = req.query;
+    let filter = {userId:req.user.id,
+        status:status
+    };
+
+    const tasks = await taskModel.find(filter);
+
+    res.render('task', { tasks });
+});
 module.exports = page;

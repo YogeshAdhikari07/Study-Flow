@@ -17,8 +17,10 @@ server.use('/api',apiRoutes);
 server.get('/', (req, res) => {
     res.render('index');
 });
-server.get('/login',(req,res)=>{
-    res.send('Login')
+server.get('/hello',(req,res)=>{
+    return res.status(201).json({
+        message:'hello'
+    })
 })
 server.listen(process.env.PORT||5000, () => {
     console.log('Server Started...');
