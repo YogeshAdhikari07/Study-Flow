@@ -4,6 +4,13 @@ const taskForm = document.getElementById('taskForm');
 const cancelCreationbtn = document.getElementById('cancelCreation');
 const closeMenuBtn = document.getElementById('closemenu');
 const filter = document.getElementById('filter');
+function onPageload() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('status') === null) {
+        filter.value = 'All';
+    }
+    else { filter.value = params.get('status'); }
+}
 filter.addEventListener('change', () => {
     const status = filter.value;
 
@@ -75,3 +82,4 @@ taskForm.addEventListener('submit', async (e) => {
         alert('Title Cannot excced the Limit of 20 or may be Empty');
     }
 });
+onPageload();
