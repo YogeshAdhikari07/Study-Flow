@@ -5,7 +5,7 @@ A full-stack application that helps students organize and track their daily task
 ## Link
 
 ```bash 
-https://study-flow-ziro.onrender.com/https://study-flow-ziro.onrender.com/
+https://study-flow-ziro.onrender.com/
 ```
 
 ## 🚀 Features
