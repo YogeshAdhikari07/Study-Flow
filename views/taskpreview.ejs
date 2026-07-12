@@ -15,14 +15,14 @@
         <%if(taskData.status === 'pending' || taskData.status === 'hold'){%>
             <button class="p-2 bg-white text-black" id="startWorkingBtn" onclick="updateStatus('<%=taskData._id%>','working')">Start Working</button>
             <span class="flex flex-row gap-6 hidden" id="completeHoldBtn">
-                <button class="p-2 bg-white text-black" onclick="updateStatus('<%=taskData._id%>','hold')">Hold Task</button>
-                <button class="p-2 bg-white text-black" onclick="updateStatus('<%=taskData._id%>','complete')">Complete Task</button>
+                <button class="p-2 bg-white text-black" onclick="updateStatus('<%=taskData._id%>','hold')">Hold</button>
+                <button class="p-2 bg-white text-black" onclick="updateStatus('<%=taskData._id%>','complete')">Complete</button>
             </span>
         <%}else if(taskData.status === 'working'){%>
             <button class="p-2 bg-white text-black hidden" id="startWorkingBtn" onclick="updateStatus('<%=taskData._id%>','working')">Start Working</button>
             <span class="flex flex-row gap-6" id="completeHoldBtn">
-                <button class="p-2 bg-white text-black" onclick="updateStatus('<%=taskData._id%>','hold')">Hold Task</button>
-                <button class="p-2 bg-white text-black" onclick="updateStatus('<%=taskData._id%>','complete')">Complete Task</button>
+                <button class="p-2 bg-white text-black" onclick="updateStatus('<%=taskData._id%>','hold')">Hold</button>
+                <button class="p-2 bg-white text-black" onclick="updateStatus('<%=taskData._id%>','complete')">Complete</button>
         <%}else{%>
 
         <%}%>
