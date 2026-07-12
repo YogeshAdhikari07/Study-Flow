@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/index.css">
 </head>
 
-<body class="h-screen w-screen overflow-hidden bg-[#0b0b0c] text-white flex flex-col p-6 gap-6" id="<%=taskData._id%>">
+<body class="h-screen w-screen overflow-x-hidden bg-[#0b0b0c] text-white flex flex-col p-6 gap-6" id="<%=taskData._id%>">
     <div class="flex flex-row justify-between items-center ">
         <span><h1>Preview</h1></span>
         <%if(taskData.status === 'pending' || taskData.status === 'hold'){%>
