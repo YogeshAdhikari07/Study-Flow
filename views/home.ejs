@@ -62,22 +62,30 @@
                         <h1 id="time-preview"></h1>
                     </span>
                 </div>
-                <div class="lg:flex lg:flex-row lg:justify-between grid grid-cols-2 grid-rows-2 gap-2">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <span class="bg-[#242424] flex flex-col p-2 rounded-xl items-center">
                         <h1>Total Tasks</h1>
-                        <h1><%=taskStatus['total']%></h1>
+                        <h1>
+                            <%=taskStatus['total']%>
+                        </h1>
                     </span>
                     <span class="bg-[#242424] flex flex-col p-2 rounded-xl items-center">
                         <h1>Pending</h1>
-                        <h1><%=taskStatus['pending']%></h1>
+                        <h1>
+                            <%=taskStatus['pending']%>
+                        </h1>
                     </span>
                     <span class="bg-[#242424] flex flex-col p-2 rounded-xl items-center">
                         <h1>Hold</h1>
-                        <h1><%=taskStatus['holding']%></h1>
+                        <h1>
+                            <%=taskStatus['holding']%>
+                        </h1>
                     </span>
                     <span class="bg-[#242424] flex flex-col p-2 rounded-xl items-center">
                         <h1>Completed</h1>
-                        <h1><%=taskStatus['complete']%></h1>
+                        <h1>
+                            <%=taskStatus['complete']%>
+                        </h1>
                     </span>
                 </div>
                 <div id="tasks-preview" class="flex flex-col gap-2">
