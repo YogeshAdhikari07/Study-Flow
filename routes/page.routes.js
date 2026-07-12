@@ -21,7 +21,7 @@ page.get('/home', auth, async (req, res) => {
         userId: req.user.id
     }).limit(3);
     const taskStatData = await taskModel.find({ userId: req.user.id });
-    let holding = 0, pending = 0, complete = 0;
+    let holding = 0, pending = 0, complete = 0 , working = 0;
     taskStatData.forEach((t) => {
         if (t['status'] === 'hold') {
             ++holding;
@@ -30,13 +30,17 @@ page.get('/home', auth, async (req, res) => {
         } else if (t['status'] === 'complete') {
             ++complete;
         }
+        else if(t['status'] === 'working') {
+            ++working;
+        }
     });
     taskStatus=
     {
         total:taskStatData.length,
         holding:holding,
         pending:pending,
-        complete:complete
+        complete:complete,
+        working:working
     }
     return res.render('home', {
         user: user,

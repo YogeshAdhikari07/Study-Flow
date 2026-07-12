@@ -79,7 +79,7 @@ taskForm.addEventListener('submit', async (e) => {
         }
     }
     else {
-        alert('Title Cannot excced the Limit of 20 or may be Empty');
+        alert('Title Cannot excced the Limit of 15 or may be Empty');
     }
 });
 onPageload();

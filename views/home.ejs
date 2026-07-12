@@ -15,7 +15,7 @@
         class="border-2 border-[#575656] rounded-xl hidden lg:w-[250px] lg:flex p-4 gap-4 flex-col">
         <div class="flex flex-col flex-1 gap-2">
             <span class="flex flex-row gap-2 justify-end">
-                <img src="/media/close.svg" alt="Close" class="h-10 lg:hidden" id="closemenu">
+                <img src="/media/close.svg" alt="Close" class="h-5 lg:hidden" id="closemenu">
             </span>
             <span class="flex flex-row gap-2" onclick="location.href='/page/home'"><img src="/media/dashboard.svg"
                     alt="Dashboard" class="h-6">
@@ -62,17 +62,23 @@
                         <h1 id="time-preview"></h1>
                     </span>
                 </div>
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <span class="bg-[#242424] flex flex-col p-2 rounded-xl items-center">
+                <div class="grid grid-cols-3 lg:grid-cols-5 gap-4">
+                    <span class="bg-[#242424] flex flex-col p-2 rounded-xl items-center col-span-2 lg:col-span-1">
                         <h1>Total Tasks</h1>
                         <h1>
                             <%=taskStatus['total']%>
                         </h1>
                     </span>
                     <span class="bg-[#242424] flex flex-col p-2 rounded-xl items-center">
-                        <h1>Pending</h1>
+                        <h1>Completed</h1>
                         <h1>
-                            <%=taskStatus['pending']%>
+                            <%=taskStatus['complete']%>
+                        </h1>
+                    </span>
+                    <span class="bg-[#242424] flex flex-col p-2 rounded-xl items-center">
+                        <h1>Working</h1>
+                        <h1>
+                            <%=taskStatus['working']%>
                         </h1>
                     </span>
                     <span class="bg-[#242424] flex flex-col p-2 rounded-xl items-center">
@@ -82,9 +88,9 @@
                         </h1>
                     </span>
                     <span class="bg-[#242424] flex flex-col p-2 rounded-xl items-center">
-                        <h1>Completed</h1>
+                        <h1>Pending</h1>
                         <h1>
-                            <%=taskStatus['complete']%>
+                            <%=taskStatus['pending']%>
                         </h1>
                     </span>
                 </div>
