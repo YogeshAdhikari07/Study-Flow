@@ -13,7 +13,7 @@
 <body class="h-screen w-screen overflow-x-hidden bg-[#0b0b0c] text-white flex flex-row p-6 gap-6">
     <section id="menu" role="menu"
         class="border-2 border-[#575656] rounded-xl hidden lg:w-[250px] lg:flex p-4 gap-4 flex-col">
-        <div class="flex flex-col flex-1 gap-2">
+        <div class="flex flex-col flex-1 gap-4">
             <span class="flex flex-row gap-2 justify-end">
                 <img src="/media/close.svg" alt="Close" class="h-5 lg:hidden" id="closemenu">
             </span>
@@ -22,15 +22,33 @@
                 <h1>DashBoard</h1>
             </span>
             <span class="flex flex-row gap-2 hover:cursor-pointer" onclick="location.href='/page/task'"><img
-                    src="/media/notes.svg" alt="Tasks" class="h-6">
+                    src="/media/task.svg" alt="Tasks" class="h-5">
                 <h1>Tasks</h1>
+            </span>
+            <span class="flex flex-row justify-between hover:cursor-pointer">
+                <span class="flex flex-row gap-2"><img src="/media/playground.svg" alt="Tasks" class="h-5">
+                    <h1>StudyGround</h1>
+                </span>
+                <h1 class="p-1 bg-white text-black rounded-full text-xs">Beta</h1>
+            </span>
+            <span class="flex flex-row justify-between hover:cursor-pointer">
+                    <span class="flex flex-row gap-2"><img src="/media/team.svg" alt="Tasks" class="h-5">
+                    <h1>Team</h1>
+                </span>
+                <h1 class="p-1 bg-white text-black rounded-full text-xs">Beta</h1>
+            </span>
+            <span class="flex flex-row justify-between hover:cursor-pointer">
+                <span class="flex flex-row gap-2"><img src="/media/Chat.svg" alt="Tasks" class="h-5">
+                    <h1>Chat</h1>
+                </span>
+                <h1 class="p-1 bg-white text-black rounded-full text-xs">Beta</h1>
             </span>
         </div>
         <div class="flex flex-col gap-2">
             <span class="flex flex-row items-center gap-2"><img src="/media/setting.svg" alt="Setting" class="h-6">
                 <h1>Setting</h1>
             </span>
-            <span class="flex flex-row gap-2"><img src="/media/logout.svg" alt="Logout" class="h-6">
+            <span class="flex flex-row gap-2" onclick="location.href='/page/logout'"><img src="/media/logout.svg" alt="Logout" class="h-6">
                 <h1>Logout</h1>
             </span>
         </div>

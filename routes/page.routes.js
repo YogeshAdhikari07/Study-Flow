@@ -71,4 +71,8 @@ page.get('/tasks/stats', auth, async (req, res) => {
 
     res.render('task', { tasks });
 });
+page.get('/logout',(req,res)=>{
+    res.clearCookie("token");
+    return res.redirect("/");
+})
 module.exports = page;
