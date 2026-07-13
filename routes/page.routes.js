@@ -77,6 +77,6 @@ page.get('/logout',(req,res)=>{
 })
 page.get('/studyground',auth,(req,res)=>
     {
-        return res.render('Studyground');
+        return res.render('studyground');
     })
 module.exports = page;
