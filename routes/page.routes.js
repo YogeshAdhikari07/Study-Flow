@@ -75,4 +75,8 @@ page.get('/logout',(req,res)=>{
     res.clearCookie("token");
     return res.redirect("/");
 })
+page.get('/studyground',auth,(req,res)=>
+    {
+        return res.render('Studyground');
+    })
 module.exports = page;

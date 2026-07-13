@@ -7,6 +7,7 @@ const auth = require('../middleware/auth');
 const userModule = require('../models/user');
 const taskModel = require('../models/task');
 const { default: mongoose } = require('mongoose');
+const axios = require("axios");
 api.post('/signup', async (req, res) => {
     const { displayname, email, password } = req.body;
     try {
@@ -165,4 +166,23 @@ api.delete('/task/deleteTask/:id', auth, async (req, res) => {
         console.log(err);
     }
 });
+api.get('/studyground/ytdata',auth,async(req,res)=>{
+    const {value} = req.query;
+    const data = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search",
+        {
+            params: {
+                part: "snippet",
+                q:value,
+                type: "video",
+                maxResults: 10,
+                key: process.env.YT_API_KEY
+            }
+        }
+    );
+    return res.json({
+        data:data['data']
+    })
+
+})
 module.exports = api;
