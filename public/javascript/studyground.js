@@ -10,7 +10,7 @@ async function search() {
         iframeBox.src='';
         const value = searchBox.value.trim();
         if (!value) { return; }
-        const res = await fetch(`/api/studyground/ytdata?value=${value}`, { method: 'GET' });
+        const res = await fetch(`/api/studyground/ytdata?value=${encodeURIComponent(value)}`, { method: 'GET' });
         const data = await res.json();
         const ytdata = data['data']['items'];
         ytdata.forEach((videoData) => {
