@@ -4,6 +4,26 @@ const searchBox = document.getElementById('searchBox');
 const resultBox = document.getElementById('resultBox');
 const iframediv = document.getElementById('iframediv');
 const iframeBox = document.getElementById('iframe');
+const layoutfull = document.getElementById('layoutfull');
+const halflayout = document.getElementById('halflayout');
+const fullsvg = document.getElementById('fullsvg');
+const halfsvg = document.getElementById('halfsvg');
+const contentdiv = document.getElementById('contentdiv');
+const toolsdiv = document.getElementById('tools');
+layoutfull.addEventListener('click',()=>{
+    layoutfull.classList.add('bg-white');halflayout.classList.remove('bg-white');
+    fullsvg.style.stroke='#000';halfsvg.style.stroke='#fff';
+    contentdiv.classList.remove('grid-cols-2');
+    contentdiv.classList.add('grid-cols-1');
+    toolsdiv.classList.add('lg:hidden')
+})
+halflayout.addEventListener('click',()=>{
+    halflayout.classList.add('bg-white');layoutfull.classList.remove('bg-white');
+    halfsvg.style.stroke='#000';fullsvg.style.stroke='#fff';
+    contentdiv.classList.remove('grid-cols-1');
+    contentdiv.classList.add('grid-cols-2');
+    toolsdiv.classList.remove('lg:hidden')
+})
 async function search() {
     try {
         resultBox.innerHTML="";
