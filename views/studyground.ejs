@@ -54,12 +54,12 @@
             </span>
         </div>
     </section>
-    <section id="hero" class="flex-1 flex flex-col gap-4 overflow-y-auto ">
+    <section id="hero" class="flex-1 flex flex-col gap-4">
         <div><span class="flex flex-row items-center gap-2">
                 <img id="menubtn" src="/media/menu.svg" alt="Menu" class="h-8 lg:hidden">
                 <h1 class="lg:text-xl">Study Flow</h1>
             </span></div>
-        <div class="lg:grid grid-cols-2 flex flex-col gap-6" id="contentdiv">
+        <div class="lg:grid grid-cols-2 flex flex-col gap-6 overflow-y-auto flex-1" id="contentdiv">
             <div class="flex flex-col gap-4 overflow-y-auto" id="studyground">
                 <div class="flex justify-center lg:justify-between items-center">
                     <!-- Search space -->
@@ -89,15 +89,51 @@
                 <div id="resultBox" class=" flex flex-col gap-4 h-auto overflow-y-auto hidden">
 
                 </div>
-                <div id="iframediv" class="hidden">
-                    <iframe src="https://www.youtube.com/embed/Oe421EPjeBE" frameborder="0"
+                <div id="iframediv" class="bg-[#242424] rounded-2xl">
+                    <iframe src="" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="aspect-16/9 rounded-2xl"
                         id="iframe"></iframe>
                 </div>
             </div>
-            <div id="tools" class="text-wrap whitespace-wrap break-all">
-                tools
+            <div id="tools" class="grid grid-rows-2 gap-4">
+                <span class="flex gap-4 flex-col">
+                    <span class="flex flex-row justify-between">
+                        <h1>Pomodoro</h1>
+                        <button><svg xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" fill="#ffffff" stroke-width="0"
+                                viewBox="0 0 24 24" height="24" width="24">
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path
+                                    d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+                            </svg></button>
+                    </span>
+                    <span class="flex flex-1 bg-[#242424] p-2 flex-col rounded-2xl justify-center items-center gap-4">
+                        <h1 id="timer" class="text-7xl">12:00</h1>
+                        <span class="flex flex-row gap-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" fill="none" stroke-width="0"
+                                viewBox="0 0 15 15" height="24" width="24" id="resetBtn" class="hidden">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.85355 2.14645C5.04882 2.34171 5.04882 2.65829 4.85355 2.85355L3.70711 4H9C11.4853 4 13.5 6.01472 13.5 8.5C13.5 10.9853 11.4853 13 9 13H5C4.72386 13 4.5 12.7761 4.5 12.5C4.5 12.2239 4.72386 12 5 12H9C10.933 12 12.5 10.433 12.5 8.5C12.5 6.567 10.933 5 9 5H3.70711L4.85355 6.14645C5.04882 6.34171 5.04882 6.65829 4.85355 6.85355C4.65829 7.04882 4.34171 7.04882 4.14645 6.85355L2.14645 4.85355C1.95118 4.65829 1.95118 4.34171 2.14645 4.14645L4.14645 2.14645C4.34171 1.95118 4.65829 1.95118 4.85355 2.14645Z"
+                                    fill="#ffffff" />
+                            </svg>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" fill="#ffffff" stroke-width="0"
+                                    viewBox="0 0 20 20" aria-hidden="true" height="24" width="24" class="" id="playBtn">
+                                    <path
+                                        d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" fill="#ffffff" stroke-width="0"
+                                    viewBox="0 0 448 512" height="24" width="24" class="hidden" id="pauseBtn">
+                                    <path
+                                        d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" />
+                                </svg>
+                            </span>
+                        </span>
+                    </span>
+                </span>
+                <span>
+                    <h1>HeatMap</h1>
+                </span>
             </div>
         </div>
     </section>
