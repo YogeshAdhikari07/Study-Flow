@@ -25,7 +25,7 @@
                     src="/media/task.svg" alt="Tasks" class="h-5">
                 <h1>Tasks</h1>
             </span>
-            <span class="flex flex-row justify-between hover:cursor-pointer">
+            <span class="flex flex-row justify-between hover:cursor-pointer" onclick="location.href='/page/studyground'">
                 <span class="flex flex-row gap-2"><img src="/media/playground.svg" alt="Tasks" class="h-5">
                     <h1>StudyGround</h1>
                 </span>
@@ -100,15 +100,16 @@
                 <span class="flex gap-4 flex-col">
                     <span class="flex flex-row justify-between">
                         <h1>Pomodoro</h1>
-                        <button><svg xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" fill="#ffffff" stroke-width="0"
+                        <button id="editSettingBtn"><svg xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" fill="#ffffff" stroke-width="0"
                                 viewBox="0 0 24 24" height="24" width="24">
                                 <path fill="none" d="M0 0h24v24H0z" />
                                 <path
                                     d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
                             </svg></button>
                     </span>
-                    <span class="flex flex-1 bg-[#242424] p-2 flex-col rounded-2xl justify-center items-center gap-4">
-                        <h1 id="timer" class="text-7xl">12:00</h1>
+                    <span id="timerWindow"
+                        class="flex flex-1  p-2 flex-col rounded-2xl justify-center items-center gap-4 hidden">
+                        <h1 id="timer" class="text-7xl">25:00</h1>
                         <span class="flex flex-row gap-4">
                             <svg xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" fill="none" stroke-width="0"
                                 viewBox="0 0 15 15" height="24" width="24" id="resetBtn" class="hidden">
@@ -128,6 +129,32 @@
                                         d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z" />
                                 </svg>
                             </span>
+                        </span>
+                    </span>
+                    <span id="timerSetting" class="flex flex-1 p-2 flex-col rounded-2xl gap-4">
+                        <label for="target">Daily Target</label>
+                        <select name="target" id="target">
+                            <option value="1" selected>1 hr</option>
+                            <option value="2">2 hr</option>
+                            <option value="3">3 hr</option>
+                            <option value="4">4 hr</option>
+                        </select>
+                        <label for="timerMin">Timer</label>
+                        <select name="timerMin" id="timerMin">
+                            <option value="15" selected>15 min</option>
+                            <option value="30">30 min</option>
+                            <option value="45">45 min</option>
+                            <option value="60">60 min</option>
+                        </select>
+                        <label for="break">Break</label>
+                        <select name="break" id="break">
+                            <option value="5" selected>5 min</option>
+                            <option value="10">10 min</option>
+                            <option value="15">15 min</option>
+                        </select>
+                        <span class="grid grid-cols-2 gap-4">
+                            <button type="button" class="bg-white text-black" id="canceleditBtn">Cancel</button>
+                            <button type="button" class="bg-white text-black">Save</button>
                         </span>
                     </span>
                 </span>
