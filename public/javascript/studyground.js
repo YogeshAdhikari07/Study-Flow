@@ -19,6 +19,9 @@ const timerSetting = document.getElementById('timerSetting');
 const timerWindow = document.getElementById('timerWindow');
 const editSettingBtn = document.getElementById('editSettingBtn');
 const date = new Date();
+let min = 0
+let sec = 0
+let timerInterval = null;
 editSettingBtn.addEventListener('click' , ()=>{
     timerSetting.classList.remove('hidden') , timerWindow.classList.add('hidden');
 })
@@ -26,20 +29,40 @@ canceleditBtn.addEventListener('click' , ()=>{
     timerSetting.classList.add('hidden') , timerWindow.classList.remove('hidden');  
 })
 function updateTimer() {
-    
+    min = Number(localStorage.getItem('timerMin')) === NaN ? 0 : Number(localStorage.getItem('timerMin'));
+    sec = Number(localStorage.getItem('timerSec')) ;
+    timer.textContent = `${min>9 ? min : '0'+ min} : ${sec > 9 ? sec : '0' + sec}`
 }
 playBtn.addEventListener("click", () => {
     (playBtn.classList.add("hidden"),
         pauseBtn.classList.remove("hidden"),
         resetbtn.classList.remove("hidden"));
+        timerInterval = setInterval(()=>{
+        if(min === 0 && sec === 0){clearInterval(timerInterval);}
+        else if(min > 0 && sec == 0)
+        {
+            min -= 1;
+        }
+        if(sec === 0 )
+        {
+            sec = 59 ;
+        }else  
+        {
+            --sec
+        }
+        timer.textContent =`${min>9 ? min : '0'+ min} : ${sec > 9 ? sec : '0' + sec}`;
+    },1000)
 });
 pauseBtn.addEventListener("click", () => {
     (pauseBtn.classList.add("hidden"), playBtn.classList.remove("hidden"));
+    clearInterval(timerInterval);
 });
 resetbtn.addEventListener("click", () => {
     (playBtn.classList.remove("hidden"),
         pauseBtn.classList.add("hidden"),
         resetbtn.classList.add("hidden"));
+    clearInterval(timerInterval);
+    updateTimer();
 });
 layoutfull.addEventListener("click", () => {
     layoutfull.classList.add("bg-white");
@@ -135,5 +158,5 @@ window.addEventListener('load', () => {
     if (!localStorage.getItem('timerMin') && !localStorage.getItem('timerSec') && !localStorage.getItem('timerTarget') && !localStorage.getItem('date')) {
         (localStorage.setItem('timerMin' , 25 ) , localStorage.setItem('timerSec' ,0 ) , localStorage.setItem('timerTarget' , 1) , localStorage.setItem('date' , date.getDate()));
     }
-    timer.textContent = `${localStorage.getItem('timerMin')} : ${localStorage.getItem('timerSec') ==  0 ? '00' : localStorage.getItem('timerSec')}`
+    updateTimer();
 })
