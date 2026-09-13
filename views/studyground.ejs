@@ -97,6 +97,7 @@
                 </div>
             </div>
             <div id="tools" class="flex flex-col gap-4 h-auto overflow-y-auto">
+                //Pomodoro
                 <span class="flex gap-4 flex-col">
                     <span class="flex flex-row justify-between">
                         <h1>Pomodoro</h1>
@@ -107,10 +108,11 @@
                                     d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
                             </svg></button>
                     </span>
+                //Timer Window
                     <span id="timerWindow"
-                        class="flex flex-1  p-2 flex-col rounded-2xl justify-center items-center gap-4 hidden">
-                        <h1 id="timer" class="text-7xl">25:00</h1>
-                        <span class="flex flex-row gap-4">
+                        class="flex flex-1  p-2 flex-col rounded-2xl justify-center items-center gap-4">
+                        <h1 id="timer" class="text-7xl">25:00</h1> // Display Time Unit
+                        <span class="flex flex-row gap-4"> //Timer Control Panel
                             <svg xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" fill="none" stroke-width="0"
                                 viewBox="0 0 15 15" height="24" width="24" id="resetBtn" class="hidden">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -131,7 +133,8 @@
                             </span>
                         </span>
                     </span>
-                    <span id="timerSetting" class="flex flex-1 p-2 flex-col rounded-2xl gap-4">
+                    //Timer Setting
+                    <span id="timerSetting" class="flex flex-1 p-2 flex-col rounded-2xl gap-4 hidden">
                         <label for="target">Daily Target</label>
                         <select name="target" id="target">
                             <option value="1" selected>1 hr</option>
